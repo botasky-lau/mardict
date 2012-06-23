@@ -1,8 +1,8 @@
 ======================
-Marvour Dict
+Botasky Dict
 ======================
 
-:Author: Marvour Young<marvour@gmail.com>
-:Blog: http://shiao.org
+:Author: Botasky Lau<Botasky.me@gmail.com>
+:Gtalk: Botasky.me@gmail.com
 
 
