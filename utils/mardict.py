@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-Mardict - Marvour Dict Bot
-Copyright (c) 2010 Marvour Young
+Skydict - Botasky Dict Bot
+Copyright (c) 2012 Botasky Lau
 
-Using api from http://dict.cn and http://www.google.com
+Using api from http://iciba.com
 """
 
 __AUTHOR__ = 'Marvour Young <marvour@gmail.com>'
