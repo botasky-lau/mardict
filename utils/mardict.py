@@ -22,8 +22,8 @@ class DictCN(object):
             word = word.encode('utf-8')
         except:
             pass
-        self.__url = 'http://dict.cn/ws.php?utf8=true&q=%s' % urllib2.quote(word)
-
+        self.__url = 'http://dict-co.iciba.com/api/dictionary.php?w=%s' % urllib2.quote(word)
+#change the api
     def __get_source(self):
         url = self.__url
         try:
@@ -37,7 +37,7 @@ class DictCN(object):
     def __parse_source(self):
         source = self.__get_source()
         if source:
-            regex = r'<key>(.*?)</key>.*?<pron>(.*?)</pron>.*?<def>(.*?)</def>'
+            regex = r'<key>(.*?)</key>.*?<pos>(.*?)</pos>.*?<acceptation>(.*?)</acceptation>'
             match = re.findall(regex, source, re.U|re.S)
             if match:
                 return match[0]
@@ -60,7 +60,7 @@ class DictCN(object):
             for num in match:
                 fix = '&#%s;' % num
                 pron = pron.replace(fix,unichr(int(num)))
-        data = {'from': 'dictcn','word': key, 'pron': pron, 'define': define}
+        data = {'from': 'iciba','word': key, 'pron': pron, 'define': define}
         return data
 
     def get_response(self):
@@ -123,7 +123,7 @@ if '__main__' == __name__:
     word = raw_input('Enter a word: ')
     d = DictCN(word)
     data = d.get_response()
-    reply = '%s [%s]\nfrom: dict.cn\n%s' % \
+    reply = '%s [%s]\nfrom: iciba.cn\n%s' % \
             (data['word'], data['pron'], data['define'])
     print reply
     g = GoogleDict(word)
